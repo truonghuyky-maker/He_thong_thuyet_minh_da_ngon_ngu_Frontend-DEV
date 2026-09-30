@@ -130,53 +130,37 @@ Trường hợp thất bại / Hủy bỏ (Failure End Condition):
 •	Người dùng nhận được thông báo lỗi rõ ràng (ví dụ: Hết chỗ, Lỗi thanh toán, Không tìm thấy kết quả) kèm theo hướng dẫn khắc phục hoặc điều hướng quay lại các bước trước. 
 
 Cấu trúc thư mục
-project/
-├── node_modules/
-├── public/
-├── src/
-│   ├── modules/
-│   │   ├── admin-dashboard/
-│   │   │   ├── components/
-│   │   │   ├── hooks/
-│   │   │   └── pages/
-│   │   │       └── SupportTicketsPage.jsx
-│   │   ├── ai-chatbot/
-│   │   │   ├── api/
-│   │   │   ├── components/
-│   │   │   │   ├── ChatFeedbackModal.jsx
-│   │   │   │   ├── ChatMessageBubble.jsx
-│   │   │   │   └── TypingIndicator.jsx
-│   │   │   ├── hooks/
-│   │   │   └── pages/
-│   │   ├── audio-guidance/
-│   │   │   ├── api/
-│   │   │   ├── components/
-│   │   │   ├── hooks/
-│   │   │   └── pages/
-│   │   ├── auth/
-│   │   │   ├── api/
-│   │   │   ├── components/
-│   │   │   ├── hooks/
-│   │   │   ├── pages/
-│   │   │   └── types/
-│   │   ├── map-gps/
-│   │   │   ├── api/
-│   │   │   ├── components/
-│   │   │   ├── hooks/
-│   │   │   └── pages/
-│   │   └── tour-booking/
-│   │       ├── api/
-│   │       ├── components/
-│   │       ├── hooks/
-│   │       └── pages/
-│   ├── routes/
-│   │   └── AppRoutes.jsx
-│   ├── services/
-│   │   └── apiClient.js
-│   ├── utils/
-│   ├── App.jsx
-│   ├── index.css
-│   └── main.jsx
-├── .gitignore
-├── package-lock.json
+tourist-guide-monorepo/
+├── .github/
+│   └── workflows/                # Pipeline CI/CD automation
+│       ├── web-ci-cd.yml         # Lint, Test, Build & Deploy Web lên Vercel/Netlify
+│       └── mobile-ci-cd.yml      # Build APK/IPA qua Expo EAS / GitHub Actions[cite: 4, 7]
+├── packages/
+│   ├── core/                     # Shared Logic & Data Layer giữa Web & Mobile
+│   │   ├── src/
+│   │   │   ├── api/              # Axios Interceptors & Base Clients[cite: 4, 6]
+│   │   │   ├── constants/        # Enums (Roles, Status, Languages)[cite: 1, 3]
+│   │   │   ├── i18n/             # Cấu hình đa ngôn ngữ i18next[cite: 4, 6]
+│   │   │   ├── types/            # TypeScript interfaces/types cho 33 bảng DB
+│   │   │   └── utils/            # Helper functions (Location, Formatters)
+│   │   └── package.json
+│   ├── web/                      # React.js Web App (Tourist + Admin Dashboard)[cite: 4, 6]
+│   │   ├── src/
+│   │   │   ├── assets/
+│   │   │   ├── components/       # Shared UI Components (Button, Table, Layout)
+│   │   │   ├── modules/          # 6 Modules nghiệp vụ
+│   │   │   ├── routes/           # React Router v6 Configuration
+│   │   │   ├── store/            # Global State Management (Zustand/Redux)[cite: 4, 6]
+│   │   │   ├── App.jsx
+│   │   │   └── main.jsx
+│   │   └── package.json
+│   └── mobile/                   # React Native Mobile App (Tourist Experience)[cite: 4, 6]
+│       ├── src/
+│       │   ├── assets/
+│       │   ├── components/       # Shared Mobile UI (Header, Card, Modal)
+│       │   ├── modules/          # 5 Modules nghiệp vụ di động
+│       │   ├── navigation/       # React Navigation (Stack, Tab, Drawer)[cite: 4]
+│       │   ├── store/            # State Management & Persistent Storage
+│       │   └── App.jsx
+│       └── package.json
 └── package.json
