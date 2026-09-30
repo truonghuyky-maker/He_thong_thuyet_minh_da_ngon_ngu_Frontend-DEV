@@ -130,43 +130,53 @@ Trường hợp thất bại / Hủy bỏ (Failure End Condition):
 •	Người dùng nhận được thông báo lỗi rõ ràng (ví dụ: Hết chỗ, Lỗi thanh toán, Không tìm thấy kết quả) kèm theo hướng dẫn khắc phục hoặc điều hướng quay lại các bước trước. 
 
 Cấu trúc thư mục
-my-tourist-app/
-├── public/                     # Static Assets (favicon, manifest, index.html)
+project/
+├── node_modules/
+├── public/
 ├── src/
-│   ├── assets/                 # Logo, hình ảnh, icon, font dùng chung
-│   ├── components/             # Components UI dùng chung toàn app (Button, Input, Modal, Table)
-│   ├── constants/              # Biến hằng số (AppConfig, Roles, Endpoints)[cite: 1, 3]
-│   ├── context/ / store/       # Global State Management (Zustand, Redux Toolkit, Context API)[cite: 4, 6]
-│   ├── hooks/                  # Custom Hooks dùng chung (useDebounce, useLocalStorage, useMediaQuery)
-│   ├── layouts/                # Cấu trúc khung trang (MainLayout, AuthLayout, AdminLayout)
-│   ├── routes/                 # Định tuyến ứng dụng (AppRoutes.jsx, PrivateRoute.jsx)
-│   ├── services/ / api/        # Cấu hình Axios Client, Interceptors, Base API[cite: 4, 6]
-│   ├── utils/                  # Hàm tiện ích (formatDate, formatCurrency, validators)
-│   │
-│   ├── modules/ / features/    # 🎯 TRỌNG TÂM: Chia theo từng TÍNH NĂNG NGHIỆP VỤ
-│   │   ├── auth/               # Feature: Đăng nhập / Đăng ký[cite: 1, 4]
-│   │   │   ├── api/            # API call riêng cho Auth (loginApi.js)
-│   │   │   ├── components/     # Component nội bộ của Auth (LoginForm.jsx)
-│   │   │   ├── hooks/          # Custom Hooks riêng (useAuth.js)[cite: 1, 2]
-│   │   │   └── pages/          # Trang màn hình (LoginPage.jsx, RegisterPage.jsx)
-│   │   │
-│   │   ├── tour-booking/       # Feature: Tìm kiếm & Đặt Tour[cite: 1, 4]
-│   │   │   ├── api/            # tourBookingApi.js[cite: 2, 4]
-│   │   │   ├── components/     # TourCard.jsx, TourFilter.jsx[cite: 2, 5]
-│   │   │   └── pages/          # TourSearchPage.jsx, TourDetailPage.jsx[cite: 2, 5]
-│   │   │
-│   │   ├── audio-guidance/     # Feature: Thuyết minh tự động[cite: 1, 4]
-│   │   │   ├── api/            # audioApi.js[cite: 2, 4]
-│   │   │   ├── components/     # AudioPlayerBar.jsx, TranscriptViewer.jsx[cite: 2, 4]
-│   │   │   └── pages/          # AudioGuidePage.jsx[cite: 2]
-│   │   │
-│   │   └── admin-dashboard/    # Feature: Quản trị Admin[cite: 1, 4]
-│   │       ├── components/     # PoiDataTable.jsx, MediaUploader.jsx[cite: 2, 4]
-│   │       └── pages/          # PoiManagementPage.jsx[cite: 2]
-│   │
-│   ├── App.jsx                 # Root Component
-│   ├── main.jsx (hoặc index.js)# Entry point ứng dụng
-│   └── index.css / App.css     # Global Styles (Tailwind CSS, CSS Variables)
-├── .env                        # Biến môi trường (VITE_API_BASE_URL)
-├── package.json
-└── README.md
+│   ├── modules/
+│   │   ├── admin-dashboard/
+│   │   │   ├── components/
+│   │   │   ├── hooks/
+│   │   │   └── pages/
+│   │   │       └── SupportTicketsPage.jsx
+│   │   ├── ai-chatbot/
+│   │   │   ├── api/
+│   │   │   ├── components/
+│   │   │   │   ├── ChatFeedbackModal.jsx
+│   │   │   │   ├── ChatMessageBubble.jsx
+│   │   │   │   └── TypingIndicator.jsx
+│   │   │   ├── hooks/
+│   │   │   └── pages/
+│   │   ├── audio-guidance/
+│   │   │   ├── api/
+│   │   │   ├── components/
+│   │   │   ├── hooks/
+│   │   │   └── pages/
+│   │   ├── auth/
+│   │   │   ├── api/
+│   │   │   ├── components/
+│   │   │   ├── hooks/
+│   │   │   ├── pages/
+│   │   │   └── types/
+│   │   ├── map-gps/
+│   │   │   ├── api/
+│   │   │   ├── components/
+│   │   │   ├── hooks/
+│   │   │   └── pages/
+│   │   └── tour-booking/
+│   │       ├── api/
+│   │       ├── components/
+│   │       ├── hooks/
+│   │       └── pages/
+│   ├── routes/
+│   │   └── AppRoutes.jsx
+│   ├── services/
+│   │   └── apiClient.js
+│   ├── utils/
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── package-lock.json
+└── package.json
