@@ -1,39 +1,64 @@
 Tourist Guide Pro Newbie
 
 I.	General
+
 Các vấn đề và thách thức gặp phải
 •	Thông thường, các khách du lịch nước ngoài khi đi du lịch tại các nước khác họ. Họ thường bị chắn bởi rào cản ngôn ngữ khi giao tiếp với những người bản xứ tại khu du lịch. Và ngược lại đối với người du lịch trong nước đi sang nước ngoài.
 •	Đồng thời, các khách du lịch thông thường có rất nhiều câu hỏi trong khi đi du lịch nhưng lại thiếu đi công cụ giúp họ dịch ngôn ngữ, chỉ dẫn và hỗ trợ họ trên con đường du lịch.
+
 Cấp độ hướng đến
 •	Xây dựng web quản lý ứng dụng trên mobile, phù hợp với nhiều trình duyệt khác nhau và hệ điều hành (OS) khác nhau.
 •	Cho phép người dùng chọn Points of Interest (POIs) và nó có chức năng multilingual text hoặc audio guidance.
 •	Có kích hoạt GPS để hiển thị địa điểm khách du lịch/người dùng trên bản đồ.
 •	Tích hợp một AI-powered chatbox có khả năng đa ngôn ngữ để trả lời hoặc đáp lại các câu hỏi mà khách du lịch hỏi bằng ngôn ngữ thích hợp với khách du lịch để khách du lịch nghe và hiểu.
+
 Giả sử tình huống
 •	Một vị khách du lịch vừa mới đến địa điểm du lịch. Mở ứng dụng lên trên điện thoại. Trên bản đồ trong điện thoại của khách du lịch sẽ xuất hiện các địa điểm bắt khách gần đây, các POIs gần đây và hiển thị vị trí đang đứng của vị khách du lịch ấy.
 Khách du lịch nhấn và chọn vào một địa điểm bắt khách nào đấy. Bản đồ sẽ chỉ đường phù hợp và an toàn cho khách du lịch đi đến địa điểm khách chọn.
 •	Trên đường khách du lịch đang tham quan, khách có thể nhấn vào POIs để có thể nghe audio thuyết minh về địa điểm mà khách sắp đến và đọc những mô tả về địa điểm du lịch bằng ngôn ngữ mà khách du lịch đề xuất hay chọn để trả lời.
 •	Nếu khách du lịch có câu hỏi, khách có thể hỏi chatbox đã được tích hợp trong hệ thống. Chatbox sẽ đáp lại khách du lịch ngay lập tức với thông tin đầy đủ.
+
 Kết quả mong muốn
 •	Một hệ sinh thái phần mềm du lịch thông minh đa nền tảng.
 •	Hệ thống thuyết minh đa ngôn ngữ linh hoạt (Multilingual Guidance).
 •	Trợ lý ảo AI thông minh (AI-powered Chatbot).
 •	Điều hướng & Chỉ đường an toàn (Navigation System).
 •	Xóa bỏ rào cản ngôn ngữ & Nâng cao trải nghiệm du lịch.
+
 II.	Specific
+
 Actor (s): Admin, Staff, App User
+
 Basic Course of Events (Luồng sự kiện chính)
-Step	Actor Action	System Response
-1	Khách du lịch (Tourist) truy cập ứng dụng/trang web và chọn chức năng xem/tìm kiếm lịch trình du lịch (Search/View Tour).	Hệ thống hiển thị giao diện tìm kiếm kèm danh sách các tour du lịch phổ biến, danh mục các điểm đến và các bộ lọc tìm kiếm (địa điểm, ngân sách, số ngày, loại hình du lịch).
-2	Khách du lịch nhập từ khóa tìm kiếm hoặc chọn các tiêu chí lọc (ví dụ: địa điểm, khoảng giá, ngày khởi hành). [A1]	Hệ thống ghi nhận các thông tin lọc và tìm kiếm trong cơ sở dữ liệu.
-3		Hệ thống hiển thị danh sách các tour du lịch phù hợp với tiêu chí tìm kiếm. [E1]
-4	Khách du lịch chọn một tour cụ thể từ danh sách kết quả để xem chi tiết.	Hệ thống hiển thị thông tin chi tiết về tour: lịch trình từng ngày, địa điểm tham quan, giá tour, thông tin hướng dẫn viên, và các đánh giá (reviews) từ người dùng khác.
-5	Khách du lịch chọn "Đặt tour" (Book Tour) và nhập/xác nhận thông tin cá nhân (Họ tên, Email, Số điện thoại, Số lượng người đi). [A2]	Hệ thống kiểm tra số lượng chỗ còn trống của tour. [E2]
-6	Khách du lịch chọn phương thức thanh toán và nhập thông tin thanh toán (Thẻ tín dụng, Chuyển khoản, Ví điện tử). [A3]	Hệ thống xác thực thông tin thanh toán và tiến hành xử lý giao dịch. [E3]
-7		Hệ thống lưu thông tin đặt tour vào cơ sở dữ liệu, gửi email/tin nhắn xác nhận đặt tour thành công kèm mã vé/mã đặt chỗ cho khách du lịch và hiển thị màn hình thông báo hoàn tất.
+Step 1
+Actor Action: Khách du lịch (Tourist) truy cập ứng dụng/trang web và chọn chức năng xem/tìm kiếm lịch trình du lịch (Search/View Tour).
+System Response: Hệ thống hiển thị giao diện tìm kiếm kèm danh sách các tour du lịch phổ biến, danh mục các điểm đến và các bộ lọc tìm kiếm (địa điểm, ngân sách, số ngày, loại hình du lịch).
 
+Step 2
+Actor Action: Khách du lịch nhập từ khóa tìm kiếm hoặc chọn các tiêu chí lọc (ví dụ: địa điểm, khoảng giá, ngày khởi hành). [A1]
+System Response: Hệ thống ghi nhận các thông tin lọc và tìm kiếm trong cơ sở dữ liệu.
 
+Step 3
+Actor Action: 
+System Response: Hệ thống hiển thị danh sách các tour du lịch phù hợp với tiêu chí tìm kiếm. [E1]
+
+Step 4
+Actor Action: Khách du lịch chọn một tour cụ thể từ danh sách kết quả để xem chi tiết.
+System Response: Hệ thống hiển thị thông tin chi tiết về tour: lịch trình từng ngày, địa điểm tham quan, giá tour, thông tin hướng dẫn viên, và các đánh giá (reviews) từ người dùng khác.
+
+Step 5
+Actor Action: Khách du lịch chọn "Đặt tour" (Book Tour) và nhập/xác nhận thông tin cá nhân (Họ tên, Email, Số điện thoại, Số lượng người đi). [A2]
+System Response: Hệ thống kiểm tra số lượng chỗ còn trống của tour. [E2]
+
+Step 6
+Actor Action: Khách du lịch chọn phương thức thanh toán và nhập thông tin thanh toán (Thẻ tín dụng, Chuyển khoản, Ví điện tử). [A3]
+System Response: Hệ thống xác thực thông tin thanh toán và tiến hành xử lý giao dịch. [E3]
+
+Step 7
+Actor Action:
+System Response: Hệ thống lưu thông tin đặt tour vào cơ sở dữ liệu, gửi email/tin nhắn xác nhận đặt tour thành công kèm mã vé/mã đặt chỗ cho khách du lịch và hiển thị màn hình thông báo hoàn tất.
 (Luồng sự kiện kết thúc)
+
 
 Alternative Paths (Luồng sự kiện thay thế)
 A1. Tìm kiếm theo đề xuất/Vị trí hiện tại (Location-Based Search)
